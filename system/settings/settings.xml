@@ -1224,6 +1224,56 @@
           </constraints>
           <control type="list" format="string" />
         </setting>
+      </group>
+      <group id="2" label="342">
+        <setting id="myvideos.selectaction.movies" type="integer" label="22079" help="36177">
+          <level>0</level>
+          <default>-1</default>
+          <constraints>
+            <options>
+              <option label="13335">-1</option>
+              <option label="22080">0</option>
+              <option label="208">8</option>
+              <option label="22081">3</option>
+              <option label="13347">7</option>
+            </options>
+          </constraints>
+          <control type="list" format="string" />
+        </setting>
+      </group>
+      <group id="3" label="20343">
+        <setting id="myvideos.selectaction.tvshows" type="integer" label="22079" help="36177">
+          <level>0</level>
+          <default>-1</default>
+          <constraints>
+            <options>
+              <option label="13335">-1</option>
+              <option label="22080">0</option>
+              <option label="208">8</option>
+              <option label="22081">3</option>
+              <option label="13347">7</option>
+            </options>
+          </constraints>
+          <control type="list" format="string" />
+        </setting>
+      </group>
+      <group id="4" label="20345">
+        <setting id="myvideos.selectaction.episodes" type="integer" label="22079" help="36177">
+          <level>0</level>
+          <default>-1</default>
+          <constraints>
+            <options>
+              <option label="13335">-1</option>
+              <option label="22080">0</option>
+              <option label="208">8</option>
+              <option label="22081">3</option>
+              <option label="13347">7</option>
+            </options>
+          </constraints>
+          <control type="list" format="string" />
+        </setting>
+      </group>
+      <group id="5" label="593">
         <setting id="myvideos.playaction" type="integer" label="22076" help="36204">
           <level>0</level>
           <default>1</default> <!-- ACTION_PLAY_OR_RESUME -->

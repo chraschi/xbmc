@@ -841,6 +841,29 @@ public:
   }
 
 protected:
+  VIDEO::GUILIB::Action GetDefaultAction() override
+  {
+    const auto* tag = GetItem()->GetVideoInfoTag();
+    if (!tag)
+      return VIDEO::GUILIB::CVideoSelectActionProcessor::GetDefaultAction();
+
+    const char* setting = nullptr;
+    if (tag->m_type == MediaTypeMovie)
+      setting = CSettings::SETTING_MYVIDEOS_SELECTACTION_MOVIES;
+    else if (tag->m_type == MediaTypeTvshow)
+      setting = CSettings::SETTING_MYVIDEOS_SELECTACTION_TVSHOWS;
+    else if (tag->m_type == MediaTypeEpisode)
+      setting = CSettings::SETTING_MYVIDEOS_SELECTACTION_EPISODES;
+
+    if (!setting)
+      return VIDEO::GUILIB::CVideoSelectActionProcessor::GetDefaultAction();
+
+    const int action = CServiceBroker::GetSettingsComponent()->GetSettings()->GetInt(setting);
+    if (action < 0)
+      return VIDEO::GUILIB::CVideoSelectActionProcessor::GetDefaultAction();
+    return static_cast<VIDEO::GUILIB::Action>(action);
+  }
+
   bool OnPlaySelected() override
   {
     CVideoPlayActionProcessor proc{m_window, GetItem(), m_player};
